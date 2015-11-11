@@ -10,7 +10,7 @@ setup(
     author="Andre da Palma",
     author_email="andrefsp@gmail.com",
     url="https://github.com/andrefsp/releasy/",
-    description="Pyppo is a small flow based programming micro framework",
+    description="Releasy its a release notes manager for your projects",
     keywords = ['git', 'management', 'release'],
     classifiers = [
         "License :: OSI Approved :: MIT License",
