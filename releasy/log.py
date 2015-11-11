@@ -1,5 +1,5 @@
-import os
 import re
+from . import PROJECT_TICKET_REGEX, PROJECT_GITHUB_URL, JIRA_BROWSE_URL
 
 
 class DetailedLog:
@@ -37,11 +37,19 @@ class DetailedLog:
 
         return map
 
-    def __init__(self, commit_message, project_regex=os.environ.get('PROJECT_TICKET_REGEX')):
-        self.commit_message = [line for line in filter(lambda line: bool(line),  commit_message)]
+    def __init__(self, commit_message, project_regex=PROJECT_TICKET_REGEX):
+        if not project_regex:
+            raise Exception("No Jira project Regex specified")
         self.project_regex = project_regex
-        self.jira_browse_url = os.environ.get('JIRA_BROWSE_URL', "https://jira.made.com/browse/")
-        self.github_url = os.environ.get('GITHUB_URL', 'https://github.com/madedotcom/warehouse/')
+
+        if not PROJECT_GITHUB_URL:
+            raise Exception("No github project url specified")
+        self.github_url = PROJECT_GITHUB_URL
+
+        self.jira_browse_url = JIRA_BROWSE_URL
+
+        self.commit_message = [line for line in filter(lambda line: bool(line),  commit_message)]
+
 
 
 class PrettyLog:

@@ -4,6 +4,9 @@ setup(
     name="Releasy",
     version="0.1",
     packages=find_packages(),
+    scripts=[
+        'scripts/releasy'
+    ],
     author="Andre da Palma",
     author_email="andrefsp@gmail.com",
     url="https://github.com/andrefsp/releasy/",
@@ -15,5 +18,8 @@ setup(
         "Programming Language :: Python :: 3.5",
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
-    requires=['gitpython(==1.0.1)']
+    requires=['gitpython(==1.0.1)'],
+    install_requires=[
+      'gitpython==1.0.1'  ,
+    ]
 )

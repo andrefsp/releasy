@@ -1,0 +1,6 @@
+#!/usr/bin/env python3
+
+from releasy.publisher import JsonPublisher
+
+print(JsonPublisher().publish())
+
