@@ -18,7 +18,7 @@ setup(
         "Programming Language :: Python :: 3.5",
         "Topic :: Software Development :: Libraries :: Python Modules"
     ],
-    requires=['gitpython(==1.0.1)'],
+    requires=['gitpython(==3.1.32)'],
     install_requires=[
       'gitpython==1.0.1'  ,
     ]
